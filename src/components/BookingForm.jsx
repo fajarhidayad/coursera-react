@@ -1,22 +1,28 @@
 import React from "react";
 import { useState } from "react";
 
-const times = ["17.00", "18.00", "19.00", "20.00", "21.00", "22.00"];
-
 const BookingForm = (props) => {
   const occasion = ["Birthday", "Anniversary"];
 
   const [date, setDate] = useState("");
   const [guest, setGuest] = useState(1);
   const [selectedOccasion, setSelectedOccasion] = useState(occasion[0]);
-
-  const submitForm = (e) => {
-    e.preventDefault();
-    console.log("Works");
-  };
+  const [selectedTime, setSelectedTime] = useState("");
 
   return (
-    <form className="form" role="form" onSubmit={submitForm}>
+    <form
+      className="form"
+      role="form"
+      onSubmit={(e) => {
+        e.preventDefault();
+        props.submitForm({
+          date,
+          guest,
+          occasion: selectedOccasion,
+          time: selectedTime,
+        });
+      }}
+    >
       <h1>Book Now</h1>
       <div className="form-control">
         <label htmlFor="res-date">Choose date</label>
@@ -31,12 +37,10 @@ const BookingForm = (props) => {
         <label htmlFor="res-time">Choose time</label>
         <select
           id="res-time"
-          value={props.availableTimes.times}
-          onChange={(e) =>
-            props.dispatch({ type: "UPDATE_TIMES", value: e.target.value })
-          }
+          value={selectedTime}
+          onChange={(e) => setSelectedTime(e.target.value)}
         >
-          {times.map((item) => (
+          {props.availableTimes.map((item) => (
             <option key={item} value={item}>
               {item}
             </option>

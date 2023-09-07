@@ -1,0 +1,29 @@
+h2 {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.card {
+  border-radius: 15px;
+  background-color: #efefee;
+  padding: 20px;
+  width: 500px;
+  margin: 10px auto;
+}
+
+.card h3 {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.card p {
+  margin-bottom: 12px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
