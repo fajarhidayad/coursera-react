@@ -1,0 +1,155 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav ul li {
+  margin-left: 30px;
+  font-weight: 600;
+}
+
+.hero-section {
+  background: #495e57;
+  color: white;
+  padding: 16px;
+}
+
+.hero-section h1 {
+  color: #f4ce14;
+  font-size: 3rem;
+}
+
+.hero-section h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.hero-section p {
+  margin-bottom: 1.25rem;
+  max-width: 320px;
+}
+
+.relative {
+  position: relative;
+}
+
+.hero-img {
+  border-radius: 16px;
+  height: 350px;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.btn {
+  border-radius: 16px;
+  padding: 15px 18px;
+  background-color: #f4ce14;
+  border: none;
+  color: black;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #dfbd12;
+  transition: all;
+  transition-duration: 150ms;
+}
+
+.hero-section .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-section {
+  margin-top: 130px;
+}
+
+.menu-section .flex {
+  margin-bottom: 30px;
+}
+
+.heading-2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 300px);
+  margin-bottom: 20px;
+}
+
+.grid-items {
+  background-color: #ededee;
+  object-fit: cover;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.grid-items-body {
+  padding: 16px;
+}
+
+.grid-items-body .flex {
+  margin-bottom: 10px;
+}
+
+.grid-items-body p {
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+.footer {
+  padding: 16px;
+  border-top: 1px solid black;
+  margin-top: 50px;
+  text-align: center;
+}

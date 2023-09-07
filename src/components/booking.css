@@ -1,0 +1,31 @@
+h1 {
+  text-align: center;
+  margin: 16px 0;
+  font-weight: 600;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-control input,
+select {
+  border: none;
+  padding: 20px 15px;
+  background-color: #efefee;
+  border-radius: 10px;
+}
+
+.form-control label {
+  margin-bottom: 12px;
+  font-weight: 500;
+}
