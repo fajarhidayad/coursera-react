@@ -11,6 +11,10 @@ h1 {
   margin: 0 auto;
 }
 
+.form .btn {
+  margin: 10px auto;
+}
+
 .form-control {
   display: flex;
   flex-direction: column;

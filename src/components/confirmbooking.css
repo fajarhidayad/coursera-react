@@ -22,8 +22,7 @@ h2 {
   margin-bottom: 12px;
 }
 
-.btn {
-  width: 500px;
+.flex-col .btn {
   margin: 20px auto;
 }
 

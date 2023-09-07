@@ -32,7 +32,7 @@ const BookingPage = () => {
   };
 
   return (
-    <main className="container">
+    <main className="">
       <BookingForm availableTimes={availableTimes} submitForm={submitForm} />
     </main>
   );

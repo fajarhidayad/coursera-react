@@ -5,11 +5,15 @@ import LemonImage from "../assets/lemon dessert.jpg";
 import BruchettaImage from "../assets/bruchetta.svg";
 import MenuItem from "./MenuItem";
 
+import { useNavigate } from "react-router-dom";
+
 const Main = () => {
+  const navigate = useNavigate();
+
   return (
     <main>
       <section className="hero-section">
-        <div className="container">
+        <div className="container hero">
           <div>
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>
@@ -17,7 +21,9 @@ const Main = () => {
               We are family owned Mediterranean restaurant, focused on
               traditional recipes served with a modern twist.
             </p>
-            <button className="btn">Reserve a Table</button>
+            <button className="btn" onClick={() => navigate("/booking")}>
+              Reserve a Table
+            </button>
           </div>
           <div className="relative">
             <img src={HeroImage} width={300} className="hero-img" />
