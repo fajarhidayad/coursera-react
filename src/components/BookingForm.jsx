@@ -1,44 +1,43 @@
 import React from "react";
 import { useState } from "react";
+import { useFormik } from "formik";
 
 const BookingForm = (props) => {
   const occasion = ["Birthday", "Anniversary"];
+  const date = Date.now();
 
-  const [date, setDate] = useState("");
-  const [guest, setGuest] = useState(1);
-  const [selectedOccasion, setSelectedOccasion] = useState(occasion[0]);
-  const [selectedTime, setSelectedTime] = useState("");
+  const formik = useFormik({
+    initialValues: {
+      date: date.toString(),
+      guest: 1,
+      occasion: occasion[0],
+      time: "17.00",
+    },
+    onSubmit: (values) => props.submitForm(values),
+  });
 
   return (
-    <form
-      className="form"
-      role="form"
-      onSubmit={(e) => {
-        e.preventDefault();
-        props.submitForm({
-          date,
-          guest,
-          occasion: selectedOccasion,
-          time: selectedTime,
-        });
-      }}
-    >
+    <form className="form" role="form" onSubmit={formik.handleSubmit}>
       <h1>Book Now</h1>
       <div className="form-control">
         <label htmlFor="res-date">Choose date</label>
         <input
           type="date"
           id="res-date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
+          name="date"
+          value={formik.values.date}
+          onChange={formik.handleChange}
+          required
         />
       </div>
       <div className="form-control">
         <label htmlFor="res-time">Choose time</label>
         <select
           id="res-time"
-          value={selectedTime}
-          onChange={(e) => setSelectedTime(e.target.value)}
+          required
+          name="time"
+          value={formik.values.time}
+          onChange={formik.handleChange}
         >
           {props.availableTimes.map((item) => (
             <option key={item} value={item}>
@@ -55,16 +54,20 @@ const BookingForm = (props) => {
           min="1"
           max="10"
           id="guests"
-          value={guest}
-          onChange={(e) => setGuest(e.target.value)}
+          name="guest"
+          value={formik.values.guest}
+          onChange={formik.handleChange}
+          required
         />
       </div>
       <div className="form-control">
         <label htmlFor="occasion">Occasion</label>
         <select
           id="occasion"
-          value={selectedOccasion}
-          onChange={(e) => setSelectedOccasion(e.target.value)}
+          name="occasion"
+          value={formik.values.occasion}
+          onChange={formik.handleChange}
+          required
         >
           {occasion.map((item) => (
             <option key={item} value={item}>

@@ -16,8 +16,6 @@ const ConfirmedBooking = () => {
     }
   }, []);
 
-  console.log(reservation);
-
   if (!reservation) return <>Loading</>;
 
   return (
